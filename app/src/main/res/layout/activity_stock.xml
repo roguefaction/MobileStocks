@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.StockActivity">
+
+
+    <TextView
+        android:id="@+id/loadingText2"
+        android:layout_width="216dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="Loading.. Please wait"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/stockName"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <TextView
+        android:id="@+id/stockName"
+        android:layout_width="275dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/hist1button"
+        android:layout_width="117dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="Week"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subRowText" />
+
+    <Button
+        android:id="@+id/hist2button"
+        android:layout_width="117dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="Month"
+
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toStartOf="@+id/hist3button"
+        app:layout_constraintStart_toEndOf="@+id/hist1button"
+        app:layout_constraintTop_toBottomOf="@+id/subRowText" />
+
+    <Button
+        android:id="@+id/hist3button"
+        android:layout_width="117dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/colorAccent"
+        android:text="3 Months"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subRowText" />
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="325dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hist2button" />
+
+    <TextView
+        android:id="@+id/symbolValue"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Symbol"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updatedTimerText" />
+
+    <TextView
+        android:id="@+id/openName"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Open"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/symbolValue" />
+
+    <TextView
+        android:id="@+id/openValue"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/openName"
+        app:layout_constraintTop_toBottomOf="@+id/changeValue" />
+
+    <TextView
+        android:id="@+id/highName"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="High"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openName" />
+
+    <TextView
+        android:id="@+id/highValue"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/highName"
+        app:layout_constraintTop_toBottomOf="@+id/openValue" />
+
+    <TextView
+        android:id="@+id/lowName"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Low"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highName" />
+
+    <TextView
+        android:id="@+id/lowValue"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lowName"
+        app:layout_constraintTop_toBottomOf="@+id/highValue" />
+
+
+    <TextView
+        android:id="@+id/volumeName"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Volume"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lowName" />
+
+    <TextView
+        android:id="@+id/volumeValue"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/volumeName"
+        app:layout_constraintTop_toBottomOf="@+id/lowValue" />
+
+    <TextView
+        android:id="@+id/changeValue"
+        android:layout_width="90dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:text="Change"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toEndOf="@+id/symbolValue"
+        app:layout_constraintTop_toBottomOf="@+id/updatedTimerText" />
+
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="216dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="Loading.. Please wait"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/stockName"
+        app:layout_constraintVertical_bias="0.949" />
+
+    <TextView
+        android:id="@+id/subRowText"
+        android:layout_width="85dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/jumpConverterButton"
+        app:layout_constraintStart_toEndOf="@+id/stockName"
+        app:layout_constraintTop_toBottomOf="@+id/stockCornerText" />
+
+    <TextView
+        android:id="@+id/stockCornerText"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/jumpConverterButton"
+        app:layout_constraintStart_toEndOf="@+id/stockName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/updatedTimerText"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/ic_action_clock"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toStartOf="@+id/refreshButton"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chart" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="38dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_refresh"
+        android:drawableTint="@color/colorBackground"
+        android:padding="10dp"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chart" />
+
+    <Button
+        android:id="@+id/jumpConverterButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_attach_money"
+        android:drawableTint="@color/colorBackground"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="339dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00DF1313"
+        android:contentDescription="Recurrence plot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <Button
+        android:id="@+id/rpButton"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:text="RP"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986" />
+
+</android.support.constraint.ConstraintLayout>

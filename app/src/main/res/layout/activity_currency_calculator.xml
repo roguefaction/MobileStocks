@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/converterButton2"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccentLight"
+        android:textColor="@color/colorBackground"
+        android:clickable="false"
+        android:text="@string/converterButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/portfolioButton2"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorBackground"
+        android:text="@string/portfolioButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/converterButton2"
+        app:layout_constraintStart_toEndOf="@+id/browseButton2" />
+
+    <Button
+        android:id="@+id/browseButton2"
+        style="@android:style/Widget.Holo.Light.Button.Inset"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorBackground"
+        android:text="@string/browseButtonText"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/currencyConverterTitle"
+        android:layout_width="260dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/currencyConverterTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/inputCurrency"
+        style="@style/spinner_style"
+        android:layout_width="310dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryLight"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyConverterTitle" />
+
+    <EditText
+        android:id="@+id/inputAmount"
+        style="@style/currency_input_style"
+        android:layout_width="310dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryLightest"
+        android:ems="10"
+        android:hint="1.00"
+        android:inputType="number"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCurrency" />
+
+    <Spinner
+        android:id="@+id/outputCurrency"
+        style="@style/spinner_style"
+        android:layout_width="310dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryLight"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAmount" />
+
+    <EditText
+        android:id="@+id/outputAmount"
+        style="@style/currency_input_style"
+        android:layout_width="310dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryLightest"
+        android:ems="10"
+        android:inputType="none"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputCurrency" />
+
+    <Button
+        android:id="@+id/convertButton"
+        style="@android:style/Widget.DeviceDefault.Button"
+        android:layout_width="218dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorAccent"
+        android:text="@string/convertButtonText"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyErrorMessage" />
+
+    <TextView
+        android:id="@+id/currencyErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputAmount" />
+
+</android.support.constraint.ConstraintLayout>

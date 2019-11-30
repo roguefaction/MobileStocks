@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent"
+    tools:context=".activity.PortfolioItemActivity">
+
+
+    <Button
+        android:id="@+id/browseButton4"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccent"
+        android:text="@string/browseButtonText"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/portfolioButton4"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccent"
+        android:text="@string/portfolioButtonText"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/converterButton4"
+        app:layout_constraintStart_toEndOf="@+id/browseButton4" />
+
+    <Button
+        android:id="@+id/converterButton4"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:background="@color/colorAccent"
+        android:text="@string/converterButtonText"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ListView
+        android:id="@+id/portfolioStockList"
+        android:layout_width="373dp"
+        android:layout_height="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorBackgroundLight"
+        app:layout_constraintBottom_toTopOf="@+id/addStockButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portfolioTitle"
+        app:layout_constraintVertical_bias="0.232" />
+
+    <Button
+        android:id="@+id/addStockButton"
+        android:layout_width="194dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_action_add"
+        android:drawableTint="@color/colorBackground"
+        android:text="@string/add_stock_button_text"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portfolioTitle"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <Button
+        android:id="@+id/editPortfolioButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="7dp"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_action_edit"
+        android:drawableTint="@color/colorBackground"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toStartOf="@+id/deletePortfolioButton"
+        app:layout_constraintStart_toEndOf="@+id/portfolioTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deletePortfolioButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:padding="7dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_action_trash"
+        android:drawableTint="@color/colorBackground"
+        android:textColor="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/portfolioTitle"
+        android:layout_width="208dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

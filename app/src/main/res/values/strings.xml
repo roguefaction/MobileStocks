@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">MobileStocksTest</string>
+    <string name="app_name">MobileStocks</string>
+    <string name="currencyConverterTitle">Currency Converter</string>
+    <string name="convertButtonText">Convert</string>
+    <string name="browseButtonText">Search</string>
+    <string name="portfolioButtonText">Portfolios</string>
+    <string name="converterButtonText">Converter</string>
+    <string name="portfolioTitle">Your Portfolios</string>
+    <string name="create_portfolio_button_text">Create Portfolio</string>
+    <string name="portfolio_name_button_text">Portfolio Name</string>
+    <string name="add_stock_button_text">Add stock</string>
 </resources>
